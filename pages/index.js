@@ -4,7 +4,14 @@ import {useRouter} from "next/router";
 export default function Home({results}) {
     const router = useRouter();
     const onClick = (id) => {
-        router.push(`/movies/${id}`);
+        router.push({
+            pathname: `/movies/${id}`,
+            query: {
+                id: id,
+            }
+        },
+            `movies/${id}`
+        );
     };
 
     return (
